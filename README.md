@@ -15,6 +15,7 @@ class Application_Form_Example extends Twitter_Bootstrap3_Form_*
     {
         $email = new Twitter_Bootstrap3_Form_Element_Email('email');
         $email->setLabel('Email')->setAttrib('placeholder', 'Email');
+		$email->setRequired(true);
 
         $password = new Zend_Form_Element_Password('password');
         $password->setLabel('Password')->setAttrib('placeholder', 'Password');
@@ -45,6 +46,7 @@ class Application_Form_Example extends Twitter_Bootstrap3_Form_*
         $this->addElement('email', 'email', array(
             'label' => 'Email',
             'placeholder' => 'Email',
+			'required' => true,
         ));
         
         $this->addElement('password', 'password', array(
@@ -70,8 +72,8 @@ The form must be inherited from class `Twitter_Bootstrap3_Form_Vertical`.
 ```html
 <form enctype="application/x-www-form-urlencoded" class="form-vertical" action="" method="post">
     <div class="form-group">
-        <label for="email" class="control-label optional">Email</label>
-        <input type="email" name="email" id="email" value="" placeholder="Email" class="form-control">
+        <label for="email" class="control-label required">Email</label>
+        <input type="email" name="email" id="email" value="" required="required" placeholder="Email" class="form-control">
     </div>
     <div class="form-group">
         <label for="password" class="control-label optional">Password</label>
@@ -99,9 +101,9 @@ The form must be inherited from class `Twitter_Bootstrap3_Form_Horizontal`.
 ```html
 <form enctype="application/x-www-form-urlencoded" class="form-horizontal" action="" method="post">
     <div class="form-group">
-        <label for="email" class="optional control-label col-sm-2">Email</label>
+        <label for="email" class="required control-label col-sm-2">Email</label>
         <div class="col-sm-10">
-            <input type="email" name="email" id="email" value="" placeholder="Email" class="form-control">
+            <input type="email" name="email" id="email" value="" required="required" placeholder="Email" class="form-control">
         </div>
     </div>
     <div class="form-group">
@@ -136,8 +138,8 @@ The form must be inherited from class `Twitter_Bootstrap3_Form_Inline`.
 ```html
 <form enctype="application/x-www-form-urlencoded" class="form-inline" action="" method="post">
     <div class="form-group">
-        <label for="email" class="sr-only optional">Email</label>
-        <input type="email" name="email" id="email" value="" placeholder="Email" class="form-control">
+        <label for="email" class="sr-only required">Email</label>
+        <input type="email" name="email" id="email" value="" required="required" placeholder="Email" class="form-control">
     </div>
     <div class="form-group">
         <label for="password" class="sr-only optional">Password</label>

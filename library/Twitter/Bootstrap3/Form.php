@@ -442,12 +442,20 @@ abstract class Twitter_Bootstrap3_Form extends Zend_Form
             // Load default decorators
             if ((null === $options) || !is_array($options)) {
                 $options = array();
-		//Class is maybe not properly transfered to this element. We'll add class if it exists here.
-		if($element->class){
-			$options['class'] = $element->class;
-		}
+				//Class is maybe not properly transfered to this element. We'll add class if it exists here.
+				if($element->class){
+					$options['class'] = $element->class;
+				}
             }
 
+			//Set HTML5 required attribute if this element is required and not excluded
+			$types_for_html5_excluded = array('note', 'html');
+			if(!in_array($type,$types_for_html5_excluded)){
+				if($element->isRequired()){
+					$element->setAttrib('required','required');
+				}
+			}
+			
             if (!array_key_exists('decorators', $options)) {
                 $decorators = $this->getDefaultDecoratorsByElementType($type);
                 if (!empty($decorators)) {
