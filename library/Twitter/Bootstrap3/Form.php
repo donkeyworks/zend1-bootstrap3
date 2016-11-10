@@ -449,7 +449,7 @@ abstract class Twitter_Bootstrap3_Form extends Zend_Form
             }
 
 			//Set HTML5 required attribute if this element is required and not excluded
-			$types_for_html5_excluded = array('note', 'html');
+			$types_for_html5_excluded = array('note', 'html', 'multiCheckbox', 'radio');
 			if(!in_array($type,$types_for_html5_excluded)){
 				if($element->isRequired()){
 					$element->setAttrib('required','required');
