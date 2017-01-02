@@ -40,15 +40,16 @@ class Twitter_Bootstrap3_Form_Decorator_Container extends Zend_Form_Decorator_Ht
         $element = $this->getElement();
         $warnings = $element->getAttrib('warning');
         $dimension = $element->getAttrib('dimension');
-        
+
         $class = ' ' . $this->getOption('class');
-        $class .= ' form-group';
-		
-		//Add possibility to add custom classes to the form-group class by attribute
-		if($element->getAttrib('formgroupclass')) {
-			$class .= ' '.$element->getAttrib('formgroupclass');
-		}
-        
+
+	//Add possibility to add custom classes to the form-group class by attribute
+	if($element->getAttrib('formgroupclass')) {
+		$class .= ' '.$element->getAttrib('formgroupclass');
+	} else {
+		$class .= ' form-group';
+	}
+
         if ($element->hasErrors()) {
             $class .= ' has-error';
         } elseif (!empty($warnings)) {
