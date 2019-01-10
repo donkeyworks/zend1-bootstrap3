@@ -20,7 +20,7 @@ class Twitter_Bootstrap3_Form_Element_Html extends Zend_Form_Element_Xhtml
 
     public $helper='FormHtml';
 
-    public function isValid($value){
+    public function isValid($value, $context = null){
 
         return true;
     }
